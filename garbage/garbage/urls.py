@@ -1,3 +1,9 @@
+'''
+Author: Gtylcara.
+Date: 2021-04-26 14:10:32
+LastEditors: Gtylcara.
+LastEditTime: 2021-04-26 23:23:11
+'''
 """garbage URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,6 +19,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from . import views
 from django.contrib import admin
 from django.urls import path
 
@@ -21,5 +28,6 @@ urlpatterns = [
     path('api/login', admin.site.urls),
     path('api/register', admin.site.urls),
     path('api/userInfo', admin.site.urls),
+    path('api/thirdparty', views.thirdParty),
 
 ]
