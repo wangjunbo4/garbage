@@ -22,12 +22,17 @@ Including another URLconf
 from . import views
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/login', admin.site.urls),
-    path('api/register', admin.site.urls),
-    path('api/userInfo', admin.site.urls),
+    path('api/login', views.login),
+    path('api/register', views.register),
+    path('api/register/checkSMS', views.checkSMS),
+    path('api/register/checkphone', views.getSMS),
+    path('api/userInfo', views.login),
     path('api/thirdparty', views.thirdParty),
 
-]
+
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

